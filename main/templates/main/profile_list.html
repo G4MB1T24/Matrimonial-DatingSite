@@ -1,0 +1,38 @@
+{% extends "main/index.html" %}
+{% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/main.css' %}">
+
+{% for profiles in profile %}
+<div class="container d-flex justify-content-center ">
+    <div class="col-md-4 ">
+        <div class="profile-card-6"><img src="{{profiles.image.url}}" class="img img-responsive">
+            <div class="profile-name">{{profiles.user}}
+                <br><br>
+            </div>
+            <div class="profile-position">Lorem Ipsum Donor</div>
+            <div class="profile-overview">
+                <div class="profile-overview">
+                    <div class=" text-center d-flex  flex-row justify-content-center">
+                        <div class="col-xs-4 p-2">
+                            <h3>Age</h3>
+                            <p>{{profiles.age}}</p>
+                        </div>
+                        <div class="col-xs-4 p-2">
+                            <h3>50</h3>
+                            <p>Matches</p>
+                        </div>
+                        <div class="col-xs-4 p-2">
+                            <h3>35</h3>
+                            <p>Goals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endfor %}
+
+{% endblock main %}

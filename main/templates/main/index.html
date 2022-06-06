@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+{% block main %}
+
+{% for posts in wedpost %}
+<div class="container-fluid d-flex justify-content-center my-2">
+  <div class="col-md-6 ">
+    <div
+      class="bg-slate-100 shadow-indigo-500/40 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary"><a href="{% url 'profile' %}">{{posts.author}}</a></strong>
+        <h3 class="mb-0 text-2xl fw-bolder"><a href="{% url 'post-detail' posts.id %}">{{posts.title}}</a></h3>
+        <div class="mb-1 text-muted">{{posts.date_posted}}</div>
+        <details class="text-muted">
+          <summary> <span class="fw-bolder">About Post Author</span></summary>
+          <p class="card-text mb-auto">Age - {{user.profile.age}}</p>
+          <p class="card-text mb-auto">Religion - {{user.profile.religion}}</p>
+        </details>
+        <p class="card-text mb-auto fw-semibold text-xl">{{posts.content}}</p>
+
+
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
+          aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+            dy=".3em">Thumbnail</text>
+        </svg>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock main %}

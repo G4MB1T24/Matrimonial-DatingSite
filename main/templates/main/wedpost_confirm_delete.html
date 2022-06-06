@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+<div class="container-fluid justify-center w-50 bg-gray-100 shadow-indigo-500/40">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Post?</legend>
+            <h2>Are you sure?!</h2>
+        </fieldset>
+        <div class="form-group flex justify-center">
+            <button type="submit"
+                class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple">Delete</button>
+        </div>
+    </form>
+</div>
+
+{% endblock main %}
